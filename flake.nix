@@ -8,14 +8,18 @@
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { alejandra, nixpkgs, ... }: {
+  outputs = {
+    alejandra,
+    nixpkgs,
+    ...
+  }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
 
-        modules = [ 
-          { environment.systemPackages = [alejandra.defaultPackage.${system}]; }
-          ./configuration.nix 
+        modules = [
+          {environment.systemPackages = [alejandra.defaultPackage.${system}];}
+          ./configuration.nix
         ];
       };
     };
