@@ -3,17 +3,21 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
+
+    alejandra.url = "github:kamadorueda/alejandra/3.1.0";
+    alejandra.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, ... }:
-    let
-      lib = nixpkgs.lib;
-    in {
-      nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [ ./configuration.nix ];
-        };
+  outputs = { alejandra, nixpkgs, ... }: {
+    nixosConfigurations = {
+      nixos = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+
+        modules = [ 
+          { environment.systemPackages = [alejandra.defaultPackage.${system}]; }
+          ./configuration.nix 
+        ];
       };
     };
+  };
 }
