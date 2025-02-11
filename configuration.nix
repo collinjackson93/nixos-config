@@ -90,9 +90,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    openssh
     git
+    obsidian
+    openssh
+    synology-drive-client
+    vim
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
