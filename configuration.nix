@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -73,7 +74,6 @@
     packages = with pkgs; [
       kdePackages.kate
       vscode
-      #  thunderbird
     ];
   };
 
@@ -93,9 +93,12 @@
     git
     obsidian
     openssh
+    nixd
     synology-drive-client
     vim
   ];
+
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

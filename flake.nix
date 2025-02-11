@@ -12,10 +12,11 @@
     alejandra,
     nixpkgs,
     ...
-  }: {
+  } @ inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
 
         modules = [
           {environment.systemPackages = [alejandra.defaultPackage.${system}];}
