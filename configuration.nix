@@ -80,6 +80,20 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "collin";
 
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "layer(control)";
+          };
+        };
+      };
+    };
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
