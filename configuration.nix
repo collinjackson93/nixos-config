@@ -109,6 +109,7 @@
     nixd
     synology-drive-client
     vim
+    globalprotect-openconnect
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
