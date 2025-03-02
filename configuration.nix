@@ -110,6 +110,7 @@
     synology-drive-client
     vim
     globalprotect-openconnect
+    todoist-electron
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
