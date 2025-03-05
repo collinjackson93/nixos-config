@@ -119,6 +119,7 @@
     vim
     globalprotect-openconnect
     todoist-electron
+    dnsutils # for nslookup
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
