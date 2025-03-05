@@ -104,6 +104,8 @@
   programs.nh = {
     enable = true;
     flake = "/home/collin/nixos-config";
+    clean.enable = true;
+    clean.extraArgs = "--keep 3 --keep-since 1w";
   };
 
   # List packages installed in system profile. To search, run:
