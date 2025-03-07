@@ -2,10 +2,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./modules/display.nix
-    ./modules/locale.nix
-    ./modules/packages.nix
-    ./modules/user.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

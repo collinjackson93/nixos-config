@@ -21,6 +21,10 @@
         modules = [
           {environment.systemPackages = [alejandra.defaultPackage.${system}];}
           ./configuration.nix
+          ./modules/display.nix
+          ./modules/locale.nix
+          ./modules/packages.nix
+          ./modules/user.nix
         ];
       };
     };

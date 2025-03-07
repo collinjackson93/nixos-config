@@ -12,6 +12,7 @@
     globalprotect-openconnect
     todoist-electron
     dnsutils # for nslookup
+    vscode
   ];
 
   programs.firefox.enable = true;
