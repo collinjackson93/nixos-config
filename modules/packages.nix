@@ -13,6 +13,7 @@
     dnsutils # for nslookup
     vscode
     gp-saml-gui
+    chromium
   ];
 
   programs.firefox.enable = true;
