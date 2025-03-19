@@ -9,10 +9,10 @@
     nixd
     synology-drive-client
     vim
-    globalprotect-openconnect
     todoist-electron
     dnsutils # for nslookup
     vscode
+    gp-saml-gui
   ];
 
   programs.firefox.enable = true;
