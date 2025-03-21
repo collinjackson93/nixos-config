@@ -14,6 +14,7 @@
     vscode
     gp-saml-gui
     chromium
+    eddie
   ];
 
   programs.firefox.enable = true;
